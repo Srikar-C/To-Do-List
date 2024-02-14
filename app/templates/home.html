@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body{
+            width: 100%;
+            position: relative;
+            margin: 0;
+            background-color: black;
+            overflow: hidden;
+        }
+        /*header*/
+        #navigation{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            top: 0;
+            width: 100%;
+            height: 30vh;
+
+            #logo{
+                margin: 0px 3%;
+            }
+
+            #buttons{
+                margin-right: 4%;
+                width: 15%;
+                margin-top: 25px;
+                display: flex;
+                justify-content: space-between;
+                form:nth-child(1) button,form:nth-child(2) button:hover{
+                    border: 1px solid white;
+                    color: white;
+                    background-color: black;
+                    border-radius: 20px;
+                    font-weight: 600;
+                    height: fit-content;
+                    width: fit-content;
+                    transition: .5s;
+                    cursor: pointer;
+                }
+                form:nth-child(1) button,form:nth-child(2) button{
+                    padding: 10px 20px;
+                }
+                form:nth-child(1) button:hover,form:nth-child(2) button:hover{
+                    padding: 15px 25px;
+                }
+                form:nth-child(1) button:hover{
+                    box-shadow:inset 0px 0px 15px black, 0px 0px 15px white;
+                }
+                form:nth-child(2) button:hover{
+                    box-shadow: 0px 0px 15px white;
+                }
+                form:nth-child(2) button,form:nth-child(1) button:hover{
+                    border: 1px solid white;
+                    color: black;
+                    background-color: white;
+                    border-radius: 20px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    height: fit-content;
+                    width: fit-content;
+                    transition: .5s;
+                }
+            }
+        }
+
+        /*section*/
+        #section{
+            margin: 0px 3%;
+            display: flex;
+            justify-content: space-between;
+
+            h1{
+                display: flex;
+                flex-direction: column;
+                font-size: 60px;
+                color: white;
+                text-transform: uppercase;
+                width: 60%;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                
+                span{
+                    background-image: linear-gradient(#DD180B,white);
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    margin: 0px 10px;
+                }
+                
+            }
+        }
+        #section p:nth-child(1){
+            display: flex;
+            width: 0%;
+            height: 15vh;
+            overflow: hidden;
+            animation: forward 3s infinite linear ;
+        }
+        #section p:nth-child(2){
+            display: flex;
+            width: 0%;
+            animation: forward1 3s infinite linear;
+            height: 15vh;
+            overflow: hidden;
+            animation-delay: 3s;
+        }
+        #section p:nth-child(3){
+            display: flex;
+            width: 0%;
+            animation: forward1 3s infinite linear;
+            height: 15vh;
+            overflow: hidden;
+            animation-delay: 6s;
+        }
+        @keyframes forward1 {
+            0%{
+                width: 0%;
+
+            }
+            100%{
+                width: 100%;
+            }
+            0%{
+                width: 0%;
+            }
+        }
+
+        @keyframes forward {
+            0%{
+                width: 20%;
+
+            }
+            100%{
+                width: 100%;
+            }
+            0%{
+                width: 0%;
+            }
+        }
+
+        /*image*/
+        .image{
+            animation: rotation 8s infinite linear;
+            height: 300px;
+            width: 300px;
+        }
+
+
+        @keyframes rotation {
+            0%{
+                transform: rotate(0deg);
+            }
+            25%{
+                transform: rotate(45deg);
+            }
+            50%{
+                transform: rotate(0deg);
+            }
+            75%{
+                transform: rotate(-45deg);
+            }
+            100%{
+                transform: rotate(0deg);
+            }
+        }
+
+    </style>
+</head>
+<body id="body">
+    <header id="navigation">
+        <nav id="logo">
+            <svg width="200" height="90" viewBox="0 0 262 131" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="262" height="131" fill="black"/>
+                <path d="M125.704 38.865H120.322L117.163 57H109.753L112.912 38.865H107.569L108.7 32.625H126.835L125.704 38.865ZM108.544 56.883L92.008 55.128H108.856L108.544 56.883ZM109.87 49.356L93.334 47.601H110.182L109.87 49.356ZM110.533 45.612L93.997 43.857H110.845L110.533 45.612ZM111.196 41.868L94.66 40.113H111.508L111.196 41.868ZM109.207 53.1L92.671 51.345H109.519L109.207 53.1ZM106.516 38.124L89.98 36.369H106.789L106.516 38.124ZM107.14 34.38L90.643 32.625H107.452L107.14 34.38ZM142.691 50.916C143.705 50.916 144.459 50.799 144.953 50.565C145.447 50.305 145.772 49.733 145.928 48.849L147.722 38.709H144.602C143.614 38.709 142.873 38.839 142.379 39.099C141.885 39.333 141.56 39.892 141.404 40.776L139.61 50.916H142.691ZM145.889 32.04C149.191 32.04 151.544 32.69 152.948 33.99C154.352 35.264 155.054 37.24 155.054 39.918C155.054 42.596 154.625 45.404 153.767 48.342C152.935 51.254 151.596 53.529 149.75 55.167C147.93 56.779 145.252 57.585 141.716 57.585C138.206 57.585 135.749 56.948 134.345 55.674C132.941 54.374 132.239 52.385 132.239 49.707C132.239 48.433 132.421 46.756 132.785 44.676C133.149 42.57 133.63 40.763 134.228 39.255C134.826 37.721 135.632 36.395 136.646 35.277C138.596 33.119 141.677 32.04 145.889 32.04ZM131.654 44.637C131.602 44.845 131.55 45.131 131.498 45.495L116.171 43.857H131.771L131.654 44.637ZM131.225 47.601C131.147 48.199 131.108 48.745 131.108 49.239L115.742 47.601H131.225ZM132.707 40.113L132.239 41.712L117.107 40.113H132.707ZM131.147 51.345C131.251 52.073 131.342 52.619 131.42 52.983L116.249 51.345H131.147ZM134.306 36.369C133.942 37.045 133.682 37.565 133.526 37.929L118.94 36.369H134.306ZM132.317 55.128C132.655 55.726 133.045 56.207 133.487 56.571L119.993 55.128H132.317ZM138.011 32.625C137.257 33.093 136.672 33.522 136.256 33.912L124.322 32.625H138.011ZM184.055 32.625C187.409 32.625 189.788 33.223 191.192 34.419C192.622 35.589 193.337 37.5 193.337 40.152C193.337 41.504 193.181 43.064 192.869 44.832C192.089 49.2 190.75 52.32 188.852 54.192C186.98 56.064 183.951 57 179.765 57H169.391L173.681 32.625H184.055ZM183.041 38.865H179.96L177.893 50.76H180.974C181.988 50.76 182.742 50.643 183.236 50.409C183.73 50.149 184.055 49.577 184.211 48.693L185.576 40.932C185.602 40.776 185.615 40.568 185.615 40.308C185.615 39.71 185.407 39.32 184.991 39.138C184.575 38.956 183.925 38.865 183.041 38.865ZM168.221 56.883L151.685 55.128H168.533L168.221 56.883ZM169.547 49.356L153.011 47.601H169.859L169.547 49.356ZM170.21 45.612L153.674 43.857H170.522L170.21 45.612ZM170.873 41.868L154.337 40.113H171.185L170.873 41.868ZM171.536 38.124L155 36.369H171.809L171.536 38.124ZM168.884 53.1L152.348 51.345H169.196L168.884 53.1ZM172.16 34.38L155.663 32.625H172.472L172.16 34.38ZM211.582 50.916C212.596 50.916 213.35 50.799 213.844 50.565C214.338 50.305 214.663 49.733 214.819 48.849L216.613 38.709H213.493C212.505 38.709 211.764 38.839 211.27 39.099C210.776 39.333 210.451 39.892 210.295 40.776L208.501 50.916H211.582ZM214.78 32.04C218.082 32.04 220.435 32.69 221.839 33.99C223.243 35.264 223.945 37.24 223.945 39.918C223.945 42.596 223.516 45.404 222.658 48.342C221.826 51.254 220.487 53.529 218.641 55.167C216.821 56.779 214.143 57.585 210.607 57.585C207.097 57.585 204.64 56.948 203.236 55.674C201.832 54.374 201.13 52.385 201.13 49.707C201.13 48.433 201.312 46.756 201.676 44.676C202.04 42.57 202.521 40.763 203.119 39.255C203.717 37.721 204.523 36.395 205.537 35.277C207.487 33.119 210.568 32.04 214.78 32.04ZM200.545 44.637C200.493 44.845 200.441 45.131 200.389 45.495L185.062 43.857H200.662L200.545 44.637ZM200.116 47.601C200.038 48.199 199.999 48.745 199.999 49.239L184.633 47.601H200.116ZM201.598 40.113L201.13 41.712L185.998 40.113H201.598ZM200.038 51.345C200.142 52.073 200.233 52.619 200.311 52.983L185.14 51.345H200.038ZM203.197 36.369C202.833 37.045 202.573 37.565 202.417 37.929L187.831 36.369H203.197ZM201.208 55.128C201.546 55.726 201.936 56.207 202.378 56.571L188.884 55.128H201.208ZM206.902 32.625C206.148 33.093 205.563 33.522 205.147 33.912L193.213 32.625H206.902ZM119.776 99H104.956L109.246 74.625H116.656L113.458 92.76H120.868L119.776 99ZM103.786 98.883L87.25 97.128H104.098L103.786 98.883ZM105.112 91.356L88.576 89.601H105.424L105.112 91.356ZM105.775 87.612L89.239 85.857H106.087L105.775 87.612ZM106.438 83.868L89.902 82.113H106.75L106.438 83.868ZM107.101 80.124L90.565 78.369H107.374L107.101 80.124ZM104.449 95.1L87.913 93.345H104.761L104.449 95.1ZM107.725 76.38L91.228 74.625H108.037L107.725 76.38ZM128.047 99L132.337 74.625H139.747L135.457 99H128.047ZM126.877 98.883L110.341 97.128H127.189L126.877 98.883ZM128.203 91.356L111.667 89.601H128.515L128.203 91.356ZM128.866 87.612L112.33 85.857H129.178L128.866 87.612ZM129.529 83.868L112.993 82.113H129.841L129.529 83.868ZM130.192 80.124L113.656 78.369H130.465L130.192 80.124ZM127.54 95.1L111.004 93.345H127.852L127.54 95.1ZM130.816 76.38L114.319 74.625H131.128L130.816 76.38ZM148.635 83.868L132.099 82.113H148.908C148.778 82.633 148.687 83.218 148.635 83.868ZM149.961 78.369L149.376 80.085L133.191 78.369H149.961ZM148.635 85.857C148.687 86.559 148.791 87.144 148.947 87.612L132.45 85.857H148.635ZM154.095 91.356L133.464 89.601H150.273C151.131 90.433 152.405 91.018 154.095 91.356ZM152.886 74.625C152.288 75.015 151.716 75.548 151.17 76.224L136.116 74.625H152.886ZM132.801 93.345H147.387L146.802 95.061L132.801 93.345ZM132.138 97.128H146.139L145.554 98.844L132.138 97.128ZM149.064 92.136C151.248 92.734 153.237 93.033 155.031 93.033C156.851 93.033 158.333 92.955 159.477 92.799L159.789 90.849L156.552 90.537C154.082 90.303 152.327 89.744 151.287 88.86C150.273 87.976 149.766 86.728 149.766 85.116C149.766 84.414 149.844 83.634 150 82.776C150.598 79.448 151.69 77.16 153.276 75.912C154.862 74.664 157.293 74.04 160.569 74.04C163.871 74.04 166.783 74.365 169.305 75.015L167.277 81.255C165.015 80.865 163.195 80.67 161.817 80.67C160.465 80.67 159.295 80.735 158.307 80.865L157.995 82.776L160.608 83.049C163.26 83.335 165.145 83.972 166.263 84.96C167.381 85.922 167.94 87.222 167.94 88.86C167.94 90.524 167.589 92.24 166.887 94.008C166.497 94.918 166.081 95.685 165.639 96.309C165.223 96.907 164.677 97.427 164.001 97.869C163.351 98.285 162.753 98.61 162.207 98.844C161.661 99.052 160.959 99.208 160.101 99.312C158.905 99.494 157.423 99.585 155.655 99.585C152.431 99.585 149.506 99.247 146.88 98.571L149.064 92.136ZM197.223 80.865H191.841L188.682 99H181.272L184.431 80.865H179.088L180.219 74.625H198.354L197.223 80.865ZM180.063 98.883L163.527 97.128H180.375L180.063 98.883ZM181.389 91.356L164.853 89.601H181.701L181.389 91.356ZM182.052 87.612L165.516 85.857H182.364L182.052 87.612ZM182.715 83.868L166.179 82.113H183.027L182.715 83.868ZM180.726 95.1L164.19 93.345H181.038L180.726 95.1ZM178.035 80.124L161.499 78.369H178.308L178.035 80.124ZM178.659 76.38L162.162 74.625H178.971L178.659 76.38Z" fill="url(#paint0_linear_20_7)"/>
+                <g style="mix-blend-mode:exclusion">
+                <rect y="21" width="91" height="91" fill="url(#pattern0)"/>
+                </g>
+                <defs>
+                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0_20_7" transform="scale(0.0119048)"/>
+                </pattern>
+                <linearGradient id="paint0_linear_20_7" x1="116" y1="22" x2="112" y2="85" gradientUnits="userSpaceOnUse">
+                <stop offset="0.238896" stop-color="#DD180B"/>
+                <stop offset="1" stop-color="white"/>
+                </linearGradient>
+                <image id="image0_20_7" width="84" height="84" xlink:href="data:image/png;base64,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"/>
+                </defs>
+            </svg>     
+        </nav>
+        <nav id="buttons">
+            <form action="{% url 'login' %}">
+                <button type="submit">Login</button>
+            </form>
+            <form action="{% url 'register' %}">
+                <button type="submit">Register</button>
+            </form>
+        </nav>
+    </header>
+
+    <section id="section">
+        <img class="image" src="{% static '/assests/photo.png' %}"/>
+        <h1>
+            <p><span>Plan</span> your day,</p>
+            <p><span>plan</span> your tasks,</p>
+            <p><span>plan</span> your success.</p>
+        </h1>
+    </section>
+    
+</body>
+</html>
